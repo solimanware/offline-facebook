@@ -1,0 +1,7 @@
+{
+  "name": "offline-facebook",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
