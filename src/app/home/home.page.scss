@@ -1,0 +1,92 @@
+ion-toolbar {
+  text-align: center;
+  img {
+    width: 70%;
+    height: auto;
+  }
+}
+
+.toolbar-title {
+  width: 100vw;
+}
+
+.add-post {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+
+  height: 50px;
+  ion-avatar {
+    height: 50px;
+    width: 50px;
+    align-self: flex-end;
+  }
+  ion-input {
+    border-radius: 15px;
+    background: #eee;
+    display: inline;
+    width: 50%;
+    --padding-top: 10px;
+    --padding-start: 5px;
+    font-size: 25px;
+
+    height: 50px;
+    align-self: flex-end;
+  }
+  ion-icon {
+    margin-top: 10px;
+    font-size: 50px;
+    align-self: flex-end;
+  }
+}
+.cta-container {
+  display: flex;
+  justify-content: center;
+
+  .cta {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 90%;
+    h3 {
+      display: flex;
+      ion-icon {
+        align-self: center;
+      }
+    }
+  }
+}
+hr {
+  background-color: #eee;
+  margin-bottom: -10px;
+}
+
+ion-card-header {
+  ion-card-subtitle {
+    display: flex;
+    flex-direction: row;
+  }
+  .poster-name {
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+  }
+}
+
+ion-card-content {
+  font-size: 30px;
+}
+
+.ios {
+  .poster-details {
+    margin-left: 5px;
+    .poster-name {
+      margin-top: 5px;
+      text-transform: capitalize;
+    }
+    .timestamp {
+      font-size: smaller;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img src="assets/logos/offline-facebook.png" alt="" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="add-post">
+    <ion-avatar>
+      <img src="assets/avatars/me.png" />
+    </ion-avatar>
+    <ion-input
+      disabled="true"
+      (click)="addNewPost()"
+      placeholder="What's on your mind?"
+    ></ion-input>
+    <ion-icon (click)="selectImage()" icon="albums-outline"></ion-icon>
+  </div>
+  <div class="posts" *ngFor="let post of posts">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>
+          <ion-avatar>
+            <img src="assets/avatars/me.png" />
+          </ion-avatar>
+          <div class="poster-details">
+            <h3 class="poster-name">Osama Soliman</h3>
+            <ion-card-subtitle class="timestamp"
+              >{{post.timestamp | dateAgo:trigger}}</ion-card-subtitle
+            >
+          </div>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <img *ngIf="post.img" [src]="post.img" />
+
+      <ion-card-content dir="auto"> {{post.content}}</ion-card-content>
+      <hr />
+      <div class="cta-container">
+        <div class="cta">
+          <h3><ion-icon name="heart-outline"> </ion-icon> Like</h3>
+          <h3>
+            <ion-icon name="chatbubble-outline"> </ion-icon>
+            Comment
+          </h3>
+          <h3 (click)="sharePost(post.content)">
+            <ion-icon name="share-outline"> </ion-icon> Share
+          </h3>
+        </div>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
