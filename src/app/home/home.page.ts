@@ -58,13 +58,8 @@ export class HomePage implements OnInit {
     });
 
     if (image) {
-      if (this.plt.is('pwa')) {
-        const base64Data = await this.readAsBase64(image);
-        this.addNewPost(null, base64Data);
-      } else if (this.plt.is('hybrid')) {
-        console.log('hybrid');
-        fetch(image.webPath);
-      }
+      const base64Data = await this.readAsBase64(image);
+      this.addNewPost(null, base64Data);
     }
   }
 
@@ -87,14 +82,6 @@ export class HomePage implements OnInit {
       };
       reader.readAsDataURL(blob);
     });
-  }
-
-  async startUpload(file: LocalFile) {
-    // TODO
-  }
-
-  async deleteImage(file: LocalFile) {
-    // TODO
   }
 
   addNewPost(content?, img?) {
